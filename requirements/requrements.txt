@@ -14,4 +14,4 @@ ordered-set==4.1.0
 flashtext==2.7
 
 lemminflect@git+https://github.com/MorishT/LemmInflect.git@honoka-dev
-# line_profiling@git+https://github.com/hitachi-nlp/line-profiling.git@main
+line_profiling@git+https://github.com/hitachi-nlp/line-profiling.git@main

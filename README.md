@@ -27,6 +27,7 @@ See [the entry-point repository](https://github.com/hitachi-nlp/FLD.git) about t
 The code has been tested with Python 3.11.5.
 ```console
 pip install -r ./requirements/requrements.txt
+pip install wheel
 export PYTHONPATH=`pwd -P`:$PYTHONPATH
 ```
 
