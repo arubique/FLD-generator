@@ -7,10 +7,16 @@ from pathlib import Path
 from pprint import pformat
 import logging
 from collections import defaultdict
+import os
+import sys
 
 import click
 from tqdm import tqdm
 import dill
+
+
+ROOT_PATH = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, ROOT_PATH)
 
 from FLD_generator.translators import build as build_translator, TemplatedTranslator
 from FLD_generator.word_banks import build_wordbank
@@ -25,6 +31,7 @@ from joblib import Parallel, delayed
 from concurrent.futures import ProcessPoolExecutor
 
 from logger_setup import setup as setup_logger
+sys.path.pop(0)
 
 
 _USE_JOBLIB_FOR_PARALLEL = False

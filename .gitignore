@@ -3,3 +3,10 @@ envs
 res/knowledge_banks/
 corpus/
 data/
+
+
+# stnd
+experiments
+inputs
+tmp
+experiment_configs

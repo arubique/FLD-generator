@@ -10,9 +10,9 @@
             "request": "launch",
             "program": "${workspaceFolder}/scripts/create_corpus.py",
             "cwd": "${workspaceFolder}",
-            "env": {
-                "PYTHONPATH": "${workspaceFolder}"
-            },
+            // "env": {
+            //     "PYTHONPATH": "${workspaceFolder}"
+            // },
             "args": [
                 "./corpus/example_corpus/",
                 "5000",
