@@ -13,8 +13,16 @@ import logging
 
 from z3.z3types import Z3Exception
 from FLD_generator.argument import Argument
-from nltk.corpus import cmudict
 import timeout_decorator
+
+# Download NLTK resources if needed
+try:
+    from nltk.corpus import cmudict
+    cmudict.dict()  # This will trigger the download if needed
+except LookupError:
+    import nltk
+    nltk.download('cmudict', quiet=True)
+    from nltk.corpus import cmudict
 from .exception import FormalLogicExceptionBase
 from FLD_generator.formula import Formula
 from FLD_generator.formula_checkers import is_provable, is_disprovable, is_consistent_set as is_consistent_formula_set
@@ -601,7 +609,7 @@ def down_sample_streaming(elems: Iterator[Any],
     よって，m = j = argmin{D(i)}, w(m) = 1.0 とする．
 
     その他のw(i) は，
-    w(i) = w(m) x (Pe(m) / Pe(i)) x (P0(i) / P0(m)) 
+    w(i) = w(m) x (Pe(m) / Pe(i)) x (P0(i) / P0(m))
          = D(i) / D(m)
     として求まる．
     """

@@ -6,6 +6,13 @@ from lemminflect import getInflection, getLemma
 from nltk.corpus.reader.wordnet import Synset, Lemma
 from nltk.corpus import WordNetCorpusReader, wordnet as _WN
 
+try:
+    _WN.synsets('brabra', lang='jpn')  # This will trigger the download if needed
+except LookupError:
+    import nltk
+    nltk.download('wordnet', quiet=True)
+    nltk.download('omw-1.4', quiet=True)
+
 logger = logging.getLogger(__name__)
 
 # this load languages other than English
