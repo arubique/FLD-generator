@@ -5,6 +5,21 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Python: Split Corpus",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/scripts/split_corpus.py",
+            "cwd": "${workspaceFolder}",
+            "args": [
+                "/home/oh/arubinstein17/github/FLD-generator/corpus/quick_corpus",
+                "--train-ratio", "0.8",
+                "--val-ratio", "0.1",
+                "--test-ratio", "0.1",
+                "--seed", "0"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
             "name": "Python: Create Corpus",
             "type": "debugpy",
             "request": "launch",
@@ -50,3 +65,22 @@
         }
     ]
 }
+
+
+// python /home/oh/arubinstein17/github/FLD-generator/scripts/create_corpus.py ./corpus/example_corpus/ 5000 --argument-config=['./configs/arguments/predicate/specified/axioms/', './configs/arguments/propositional/axioms/', './configs/arguments/predicate/specified/references/', './configs/arguments/propositional/references/', './configs/arguments/predicate/quantified/references/', './configs/arguments/predicate/specified/theorems', './configs/arguments/propositional/theorems', './configs/arguments/predicate/quantified/theorems'] --extend-branches-steps-range=[0, 5] --generate-stem-steps-range=[1, 3] --negation-arguments-weight=0.1 --num-workers=10 --reference-tree-prob=0.2 --seed=0 --theorem-arguments-factor=0.01 --theorem-arguments-weight-adjustment-subset=G_MP.syllogism.contraposition.interchangeability --theorem-tree-prob=0.15 --translation-config=['old-thing.v1']
+
+// python /home/oh/arubinstein17/github/FLD-generator/scripts/create_corpus.py ./corpus/example_corpus/ 5000 --argument-config=['./configs/arguments/predicate/specified/axioms/', './configs/arguments/propositional/axioms/', './configs/arguments/predicate/specified/references/', './configs/arguments/propositional/references/', './configs/arguments/predicate/quantified/references/', './configs/arguments/predicate/specified/theorems', './configs/arguments/propositional/theorems', './configs/arguments/predicate/quantified/theorems']
+
+// python /home/oh/arubinstein17/github/FLD-generator/scripts/create_corpus.py ./corpus/example_corpus/ 5000 --argument-config="['./configs/arguments/predicate/specified/axioms/', './configs/arguments/propositional/axioms/', './configs/arguments/predicate/specified/references/', './configs/arguments/propositional/references/', './configs/arguments/predicate/quantified/references/', './configs/arguments/predicate/specified/theorems', './configs/arguments/propositional/theorems', './configs/arguments/predicate/quantified/theorems']"
+
+
+"argument-config": [
+    "./configs/arguments/predicate/specified/axioms/",
+    "./configs/arguments/propositional/axioms/",
+    "./configs/arguments/predicate/specified/references/",
+    "./configs/arguments/propositional/references/",
+    "./configs/arguments/predicate/quantified/references/",
+    "./configs/arguments/predicate/specified/theorems",
+    "./configs/arguments/propositional/theorems",
+    "./configs/arguments/predicate/quantified/theorems"
+  ]
